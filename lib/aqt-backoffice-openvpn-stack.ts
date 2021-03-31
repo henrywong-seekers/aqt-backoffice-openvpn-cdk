@@ -34,9 +34,6 @@ export class AqtBackofficeOpenvpnStack extends cdk.Stack {
       }),
       vpc,
       securityGroup: sg,
-      init: ec2.CloudFormationInit.fromConfig(
-        new ec2.InitConfig([ec2.InitPackage.apt('ec2-instance-connect')])
-      ),
     });
 
     new ec2.CfnEIPAssociation(this, 'EIPAssociation', {
